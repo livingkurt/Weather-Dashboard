@@ -1,0 +1,60 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* margin: 0px auto; */
+}
+
+#city_search_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0px 20px 0px 10px;
+    /* width: 100%; */
+}
+
+#city_row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+    
+}
+
+.cities {
+    padding: 10px;
+    border: solid 1px rgb(223, 223, 223);
+    width: 300px;
+    
+}
+
+#metrics_forcast_col {
+    width: 100%
+}
+
+#metrics_row {
+    border: solid 1px rgb(223, 223, 223);
+    padding: 20px;
+}
+
+.metrics {
+    padding: 10px;
+}
+
+#city_name_date_row {
+    /* padding: 0px; */
+    /* margin: 0px; */
+}
+h2 {
+    margin: 0px;
+}
