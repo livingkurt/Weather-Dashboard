@@ -1,23 +1,34 @@
-// // Assign Variables
-// var body_e = $("body");
-// // Create Elements
-// var header_e = $("<header>");
-// var container_e = $("<div>");
-// var weather_dashboard_e = $("<h1>");
+var APIKey = "e2a4adc7df9c811b491a471a203cda9d";
+var search_i_e = $("#search_i")
+var search_b_e = $("#search_b")
 
 
+// var city_name = "Austin,Texas"
 
+// Here we are building the URL we need to query the database
+// var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=" + city_name + "&units=imperial&appid=" + APIKey;
 
+// Here we are building the URL we need to query the database
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=Bujumbura,Burundi&units=imperial&appid=" + APIKey;
 
+// Here we run our AJAX call to the OpenWeatherMap API
+$.ajax({url: queryURL,method: "GET"}).then(function(response) {
+    // We store all of the retrieved data inside of an object called "response"
+    // Log the queryURL
+    console.log(queryURL);
 
-// function create_elements() {
+    // Log the resulting object
+    console.log(response);
 
-//     // header_e.text("Weather Dashborad")
-//     weather_dashboard_e.text("Weather Dashborad")
+})
 
-//     container_e.text("Container")
-//     header_e.append(weather_dashboard_e);
-//     body_e.append(header_e, container_e);
+function get_data(){
 
-// }
-// create_elements();
+}
+
+function city_search() {
+    var search_city = search_i_e.val();
+    console.log(search_city)
+}
+
+search_b_e.on("click",city_search);
