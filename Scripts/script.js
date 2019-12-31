@@ -6,6 +6,8 @@ var temp_l_e = $("#temp_l")
 var humidity_l_e = $("#humidity_l")
 var wind_speed_l_e = $("#wind_speed_l")
 var uv_index_l_e = $("#uv_index_l")
+var city_row_e = $("#city_row")
+var cities_e = $(".cities")
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -16,7 +18,7 @@ today = mm + '/' + dd + '/' + yyyy;
 console.log(today)
 // var x = document.getElementById("demo");
 
-geocoder = new google.maps.Geocoder();
+// geocoder = new google.maps.Geocoder();
 
 function getLocation() {
     // Make sure browser supports this feature
@@ -38,13 +40,13 @@ function getLocation() {
 
   }
 
-getLocation();
+// getLocation();
+// var search_city = search_i_e.val();
 
 
-function city_search() {
-    var search_city = search_i_e.val();
+function city_search(search_city) {
+    var search_city = search_city
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=" + search_city + "&units=imperial&appid=" + APIKey;
-    
 
     // Here we run our AJAX call to the OpenWeatherMap API
     $.ajax({url: queryURL,method: "GET"}).then(function(response) {
@@ -72,16 +74,29 @@ function city_search() {
     
         })  
     })  
+}
+
+function major_cities() {
+    console.log(this.dataset.city)
+    var search_city = this.dataset.city
+    city_search(search_city);
 
 }
 
-search_b_e.on("click",city_search);
+cities_e.on("click",major_cities);
+search_b_e.on("click",function () {
+  var search_city = search_i_e.val();
+  city_search(search_city);
+});
 document.addEventListener("keypress", function (e) {
     if (e.key === 'Enter') {
         console.log("enter")
         // next_question();
-        city_search();
+        var search_city = search_i_e.val();
+        city_search(search_city); 
       }
 })
+
+
 
 
