@@ -64,17 +64,41 @@ function city_search(search_city) {
         humidity_l_e.text("Humidity: " + humidity_data);
         wind_speed_l_e.text("Wind Speed: " + wind_data);
 
-        var uvqueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&units=imperial&appid=" + APIKey;
-        // temp_l_e.html("Temperature " + response.main.temp);
-        $.ajax({url: uvqueryURL,method: "GET"}).then(function(response) {
-            console.log(response.value)
         
-            var uv_data = response.value
-            uv_index_l_e.text("UV Index: " + uv_data)
-    
-        })  
+        // temp_l_e.html("Temperature " + response.main.temp);
+
+        var uvqueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&units=imperial&appid=" + APIKey;
+        $.ajax({url: uvqueryURL,method: "GET"}).then(function(response) {
+          // console.log(response.value)
+      
+          var uv_data = response.value
+          uv_index_l_e.text("UV Index: " + uv_data)
+
+      })  
+      var forcastqueryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + search_city + "&units=imperial&appid=" + APIKey;
+      // http://api.openweathermap.org/data/2.5/forecast?q=Austin,us&appid=e2a4adc7df9c811b491a471a203cda9d
+      $.ajax({url: forcastqueryURL,method: "GET"}).then(function(response) {
+        var min_temp_a = [];
+        for (var i = 1; i < 8; i++){
+          console.log(response.list[i].main.temp_min)
+          var min_temp = response.list[i].main.temp_min
+          min_temp_a.push(min_temp);
+        }
+        // console.log(min_temp_a);
+        console.log(Math.min(...min_temp_a));
+        // Today
+        // console.log(response.list[0])
+        // Day 1 Min Temp
+        // console.log(response.list[3].main.temp_min)
+
+
+})  
+        
     })  
+    
+
 }
+
 
 function major_cities() {
     console.log(this.dataset.city)
