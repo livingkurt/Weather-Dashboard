@@ -9,6 +9,9 @@ var wind_speed_l_e = $("#wind_speed_l")
 var uv_index_l_e = $("#uv_index_l")
 var city_row_e = $("#city_row")
 var cities_e = $(".cities")
+var cities_b_e = $("#cities_b")
+var city_row_e = $("#city_row")
+var city_row_e = $(".city_row")
 
 // Get Todays Date
 var today = new Date();
@@ -50,7 +53,7 @@ function get_city_from_coord(lat, lon) {
   var queryURL = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + lon
   print(queryURL)
 
-//   // Here we run our AJAX call to the OpenWeatherMap API
+  // Here we run our AJAX call to the OpenWeatherMap API
   $.ajax({url: queryURL,method: "GET"}).then(function(response) {
       var city = response.address.city
       print(city)
@@ -209,13 +212,36 @@ function print(x){
   console.log(x)
 }
 
+// function show_cities(){
+//     city_row_e.attr("style", "display: flex;")
+// }
+function show_cities() {
+  if (city_row.style.display === "flex") {
+    city_row.style.display = "none";
+  } 
+  else {
+    city_row.style.display = "flex";
+  }
+}
+
+// function toggle(city_row_e) {
+//   var el = document.getElementById(obj);
+//   if ( el.style.display != 'none' ) {
+//       el.style.display = 'none';
+//   }
+//   else {
+//       el.style.display = '';
+//   }
+// }
 
 // Event Handlers
 cities_e.on("click",major_cities);
+cities_b_e.on("click",show_cities);
 search_b_e.on("click",function () {
   var search_city = search_i_e.val();
   get_todays_weather(search_city);
 });
+
 document.addEventListener("keypress", function (e) {
     if (e.key === 'Enter') {
         console.log("enter")
