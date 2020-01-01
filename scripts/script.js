@@ -120,7 +120,7 @@ function get_todays_uv_index(lat, long) {
 // Get info for 5 day forcast
 function get_forcast(search_city, start, end, num) {
   // Set up URL
-  var forcastqueryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + search_city + "&units=imperial&appid=" + APIKey;
+  var forcastqueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + search_city + "&units=imperial&appid=" + APIKey;
   // Do an AJAX Request
   $.ajax({url: forcastqueryURL,method: "GET"}).then(function(response) {
     // Get Date from Request
