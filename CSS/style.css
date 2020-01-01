@@ -3,7 +3,6 @@ html, body {
     margin-top: 0px;
     margin: 0px;
     height: 100%;
-    /* min-height: 100vh */
 }
 
 #container {
@@ -12,8 +11,6 @@ html, body {
     background-color: rgb(235, 235, 235);
     height: 100%;
     padding: 10px;
-    
-    /* justify-content: space-evenly; */
 }
 
 h2 {
@@ -22,8 +19,6 @@ h2 {
 
 h1 {
     margin-bottom: 30px;
-    /* padding-top: ; */
-    /* padding: auto auto; */
     color: white;
     font-size: 50px;
     
@@ -43,8 +38,7 @@ h1 {
     justify-content: center;
     width: 100%;
     text-align: center;
-    
-    /* margin: 0px auto; */
+
 }
 
 #city_search_col {
@@ -72,14 +66,11 @@ h1 {
     padding: 10px;
     border-bottom: solid 0.5px rgb(223, 223, 223);
     border-right: solid 0.5px rgb(223, 223, 223);
-    /* width: 100%; */
     background-color: white;
     
 }
 .cities:last-of-type {
     padding: 10px;
-    /* border-bottom: solid 0.5px rgb(223, 223, 223); */
-    /* width: 100%; */
     background-color: white;
     
 }
@@ -112,8 +103,6 @@ h1 {
     background-color: white;
     margin: 18px 0px;
     height: auto;
-
-    /* display: flex; */
 }
 
 .metrics {
@@ -128,7 +117,6 @@ h1 {
 }
 
 #search_i {
-    /* margin-right: 20px; */
     width: 80%;
     font-size: 16px;
     border-radius: 5px;
@@ -138,10 +126,7 @@ h1 {
 }
 
 #search_b {
-    /* width: 40px;
-    /* color: white; */
     height: 100%;
-    /* width: 50px; */
     background-color:rgb(50, 54, 95);
     border-radius: 5px;
     font-size: 16px; */
@@ -151,7 +136,6 @@ h1 {
     width: 40px;
     color: white;
     height: 100%;
-    /* width: 50px; */
     background-color:rgb(50, 54, 95);
     border-radius: 5px;
     font-size: 16px;
@@ -160,8 +144,6 @@ h1 {
 
 #forcast_5_day_row {
     display: flex;
-    /* justify-content: space-between; */
-    /* display: flex; */
     flex-wrap: wrap;
     
 }
@@ -171,7 +153,6 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     width: 175px;
-    /* min-width: 50px; */
     background-color: rgb(50, 54, 95);
     border-radius: 5px;
     border: solid 1px rgb(223, 223, 223);
@@ -193,12 +174,7 @@ h1 {
 }
 
 .weather_icon {
-    /* width: 12%; */
     color: white;
-    /* height: 100%; */
-    /* width: 50px; */
-    /* background-color: rgb(50, 54, 95); */
-    /* border-radius: 5px; */
     font-size: 30px;
 }
 
@@ -212,7 +188,7 @@ h1 {
     display: none;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 786px) {
     #forcast_5_day_row {
         justify-content: center;
     }
@@ -277,23 +253,3 @@ h1 {
     }
 }
 
-/** Mobile **/
-@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
-
-
-
-}
-
-/** Tablet **/
-@media only screen and (min-width : 768px) and (max-width : 1024px) {
-
-
-
-}
-
-/** Tablet (landscape) **/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-
-
-
-}
