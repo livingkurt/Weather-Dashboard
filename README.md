@@ -64,5 +64,10 @@ Once I figure out what information I needed, it was pretty straight forward feed
 Initially I wanted to create all of my html and css from javascript. But it seemed more daunting work than I thought.
 And making html wireframe is quite relaxing.
 
+## Issues
+
+* Major Cities Collapse will not uncollapse when changing window size
+* Google Chrome will not do the api calls, safari does
+
 
 
