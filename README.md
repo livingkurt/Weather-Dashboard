@@ -29,7 +29,7 @@ Link to Website Here - https://livingkurt.github.io/Weather-Dashboard/
 I created a weather application, gives you the weather based on your location and allows a user to search the weather anywhere in the world as well.
 
 
-Features
+### Features
 * Automatic Location Prompt
 * Search the weather in any city in the world
 * Choose from a predetermined list of major City, to get a view of what the weather is like there.
