@@ -11,6 +11,7 @@ html, body {
     flex-direction: row;
     background-color: rgb(235, 235, 235);
     height: 100%;
+    padding: 10px;
     
     /* justify-content: space-evenly; */
 }
@@ -50,7 +51,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0px 20px 0px 10px;
+    margin: 0px 20px 0px 20px;
     
     /* width: 100%; */
 }
@@ -59,9 +60,9 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    border: solid 1px rgb(223, 223, 223);
+    border: solid 0.5px rgb(223, 223, 223);
     border-radius: 5px;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     width: 250px;
     
     
@@ -69,17 +70,22 @@ h1 {
 
 .cities {
     padding: 10px;
-    border: solid 1px rgb(223, 223, 223);
-    width: 100%;
+    border-bottom: solid 0.5px rgb(223, 223, 223);
+    border-right: solid 0.5px rgb(223, 223, 223);
+    /* width: 100%; */
+    background-color: white;
+    
+}
+.cities:last-of-type {
+    padding: 10px;
+    /* border-bottom: solid 0.5px rgb(223, 223, 223); */
+    /* width: 100%; */
     background-color: white;
     
 }
 
 .cities:hover {
     background-color:  rgb(138, 142, 173);
-}
-.cities:focus {
-    /* background-color:  rgb(138, 142, 173); */
 }
 .cities:active {
     background-color: rgb(50, 54, 95);
@@ -196,11 +202,11 @@ h1 {
     font-size: 30px;
 }
 
-/* @media screen and (max-width: 1400px) {
-    #forcast {
-        
+@media screen and (min-width: 1410px) {
+    #forcast_5_day_row {
+        justify-content: space-between;
     }
-} */
+}
 
 #cities_b {
     display: none;
@@ -210,6 +216,9 @@ h1 {
     #forcast_5_day_row {
         justify-content: center;
     }
+    .cities {
+        display: flex;
+    }
     #city_row {
         display: flex;
     }
@@ -218,7 +227,10 @@ h1 {
 @media screen and (max-width: 623px) {
 
     #city_row {
-        width: 118px;
+        width: 100%;
+    }
+    .cities {
+        display: flex;
     }
     #city_row {
         display: flex;
@@ -230,6 +242,9 @@ h1 {
     #header_row {
         height: 150px;
         /* justify-content: center; */
+    }
+    .cities {
+        display: flex; 
     }
     #city_row {
         display: flex;
@@ -250,10 +265,35 @@ h1 {
         display: flex;
     }
     .cities {
-        width: 96%;
+        /* width: 96%; */
         text-align: center;
     }
     #search_i {
         width: 89%;
     }
+    #city_search_col {
+        margin: 0px;
+
+    }
+}
+
+/** Mobile **/
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+
+
+
+}
+
+/** Tablet **/
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+
+
+}
+
+/** Tablet (landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+
+
 }

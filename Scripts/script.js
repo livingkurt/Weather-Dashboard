@@ -10,8 +10,19 @@ var uv_index_l_e = $("#uv_index_l")
 var city_row_e = $("#city_row")
 var cities_e = $(".cities")
 var cities_b_e = $("#cities_b")
-var city_row_e = $("#city_row")
+// var city_row_e = $("#city_row")
 var city_row_e = $(".city_row")
+var screen_size = $( document ).width();
+
+// $( document ).onresize = show();
+
+// function show() {
+//   city_row_e.attr("style", "display: flex;")
+//   // if (screen_size >= 430){
+//   //   city_row_e.attr("style", "display: flex;")
+//   // }
+// }
+
 
 // Get Todays Date
 var today = new Date();
@@ -61,6 +72,8 @@ function get_city_from_coord(lat, lon) {
 
   })  
 }
+
+
 
 
 // Get Current Weather
@@ -233,6 +246,7 @@ function show_cities() {
 //       el.style.display = '';
 //   }
 // }
+
 
 // Event Handlers
 cities_e.on("click",major_cities);
