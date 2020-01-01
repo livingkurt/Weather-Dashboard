@@ -67,7 +67,7 @@ function get_city_from_coord(lat, lon) {
 function get_todays_weather(search_city) {
     var search_city = search_city
     // Set up URL
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=" + search_city + "&units=imperial&appid=" + APIKey;
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" + "q=" + search_city + "&units=imperial&appid=" + APIKey;
     // Do an AJAX Request
     $.ajax({url: queryURL,method: "GET"}).then(function(response) {
         // Assign Variables to Request
@@ -107,7 +107,7 @@ function get_5_day_forcast(search_city){
 // Separate request for uv index
 function get_todays_uv_index(lat, long) {
     // Set up URL
-    var uvqueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&units=imperial&appid=" + APIKey;
+    var uvqueryURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&units=imperial&appid=" + APIKey;
     // Do an AJAX Request
     $.ajax({url: uvqueryURL,method: "GET"}).then(function(response) {
       // Get UV index from response
@@ -120,7 +120,7 @@ function get_todays_uv_index(lat, long) {
 // Get info for 5 day forcast
 function get_forcast(search_city, start, end, num) {
   // Set up URL
-  var forcastqueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + search_city + "&units=imperial&appid=" + APIKey;
+  var forcastqueryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + search_city + "&units=imperial&appid=" + APIKey;
   // Do an AJAX Request
   $.ajax({url: forcastqueryURL,method: "GET"}).then(function(response) {
     // Get Date from Request
