@@ -14,6 +14,7 @@ var cities_e = $(".cities")
 var cities_b_e = $("#cities_b")
 var city_row_e = $(".city_row")
 var screen_size = $( document ).width();
+var todays_weather_icon_e = $("#todays_weather_icon")
 
 // Get Todays Date
 var today = new Date();
@@ -68,10 +69,14 @@ function get_todays_weather(search_city) {
     var search_city = search_city
     // Set up URL
     var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + "q=" + search_city + "&units=imperial&appid=" + APIKey;
+    
     // Do an AJAX Request
     $.ajax({url: queryURL,method: "GET"}).then(function(response) {
         // Assign Variables to Request
+        
         var name_data = response.name
+        var todays_weather_data = response.weather[0].main
+        console.log(todays_weather_data)
         var temp_data = response.main.temp 
         temp_data = temp_data + "°F";
         var humidity_data = response.main.humidity + "%"
@@ -81,15 +86,41 @@ function get_todays_weather(search_city) {
         get_todays_uv_index(lat, long)
 
         // Update Elements with Information from API
-        city_name_date_h2_e.text(name_data + " (" + today + ")");
+        
         temp_l_e.text("Temperature: " + temp_data);
         humidity_l_e.text("Humidity: " + humidity_data);
         wind_speed_l_e.text("Wind Speed: " + wind_data); 
         get_5_day_forcast(search_city);
+        get_todays_weather_conditions(name_data, todays_weather_data)
         
         
     })  
 }
+
+// Get weather conditions from Request
+function get_todays_weather_conditions(name_data, todays_weather_data, start, end, num) {
+  if (todays_weather_data === "Clear"){
+    city_name_date_h2_e.text(name_data + " (" + today + ") ");
+    todays_weather_icon_e.attr("class", "fas fa-sun weather_icon")
+  }
+  else if (todays_weather_data === "Clouds"){
+    city_name_date_h2_e.text(name_data + " (" + today + ") ");
+    todays_weather_icon_e.attr("class", "fas fa-cloud weather_icon")
+  }
+  else if (todays_weather_data === "Thunderstorm"){
+    city_name_date_h2_e.text(name_data + " (" + today + ") ");
+    todays_weather_icon_e.attr("class", "fas fa-bolt weather_icon")
+  }
+  else if (todays_weather_data === "Rain" || todays_weather_data === "Drizzle" ){
+    city_name_date_h2_e.text(name_data + " (" + today + ") ");
+    todays_weather_icon_e.attr("class", "fas fa-cloud-showers-heavy weather_icon")
+  }
+  else if (todays_weather_data === "Snow") {
+    city_name_date_h2_e.text(name_data + " (" + today + ") ");
+    todays_weather_icon_e.attr("class", "fas fa-snowflake weather_icon")
+  }
+}
+
 function get_5_day_forcast(search_city){
     // Day 1
     get_forcast(search_city, 1, 9, 1);

@@ -62,6 +62,10 @@ h1 {
     
 }
 
+#city_name_date_row {
+    display: flex;
+}
+
 .cities {
     padding: 10px;
     border-bottom: solid 0.5px rgb(223, 223, 223);
@@ -176,6 +180,10 @@ h1 {
 .weather_icon {
     color: white;
     font-size: 30px;
+}
+
+#todays_weather_icon {
+    color: rgb(50, 54, 95);
 }
 
 @media screen and (min-width: 1410px) {
